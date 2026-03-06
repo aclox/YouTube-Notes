@@ -19,9 +19,7 @@ to the exact moment in the video.
 2. Open Chrome and go to `chrome://extensions`
 3. Enable **Developer Mode** (top right toggle)
 4. Click **Load unpacked** and select the `yt-lecture-notes` folder
-5. Download `quill.js` and `quill.snow.css` from https://cdn.quilljs.com/1.3.6/ 
-   and place them in the extension folder
-6. Open any YouTube video and click the extension icon
+5. Open any YouTube video and click the extension icon
 
 ## Usage
 - Navigate to any YouTube video and click the extension icon to open the notes panel
