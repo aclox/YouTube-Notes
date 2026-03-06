@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LectureNotes</title>
+  <link href="quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <span class="logo-text">LectureNotes</span>
+          <span class="logo-version">v2.0</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="library-btn" title="Notes Library">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </button>
+        <button class="icon-btn" id="export-btn" title="Export Notes">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="video-meta" id="video-meta">
+      <div class="video-meta-inner">
+        <div class="video-thumbnail-wrap">
+          <img id="video-thumb-img" src="" alt="">
+        </div>
+        <div class="video-info">
+          <div class="video-title" id="video-title">Loading...</div>
+          <div class="video-sub" id="video-sub">Open a YouTube video to begin</div>
+        </div>
+        <button class="go-video-btn" id="go-video-btn" title="Open video" style="display:none">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="not-youtube" id="not-youtube" style="display:none">
+      <div class="not-youtube-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <h3>No video detected</h3>
+      <p>Navigate to a YouTube video to start capturing timestamped notes.</p>
+      <button class="btn-primary" id="open-library-btn">Browse All Notes</button>
+    </div>
+
+    <div class="editor-area" id="editor-area">
+      <div class="playlist-bar" id="playlist-bar" style="display:none">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+          <line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+        <span id="playlist-name-text">Part of a playlist</span>
+        <button class="playlist-view-btn" id="view-playlist-btn">View Compiled</button>
+      </div>
+
+      <div id="editor-wrapper">
+        <div id="editor"></div>
+      </div>
+
+      <div class="toolbar-bottom">
+        <button class="btn-timestamp" id="timestamp-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Timestamp
+        </button>
+        <div class="status-area">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Ready</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="quill.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
