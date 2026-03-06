@@ -20,6 +20,7 @@ to the exact moment in the video.
 3. Enable **Developer Mode** (top right toggle)
 4. Click **Load unpacked** and select the `yt-lecture-notes` folder
 5. Open any YouTube video and click the extension icon
+[All dependencies have already been added, no extra downloads needed].
 
 ## Usage
 - Navigate to any YouTube video and click the extension icon to open the notes panel
